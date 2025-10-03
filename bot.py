@@ -175,7 +175,9 @@ async def export(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # --- Запуск ---
 if __name__ == "__main__":
-    TOKEN = "8174814912:AAHjCYdcByjzG-EmeZC0ttDx-6rFCign3sA"
+    import os
+TOKEN = os.getenv("8174814912:AAHjCYdcByjzG-EmeZC0ttDx-6rFCign3sA")
+
     app = ApplicationBuilder().token(TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
@@ -190,3 +192,4 @@ if __name__ == "__main__":
 
     print("Бот запущен...")
     app.run_polling()
+
